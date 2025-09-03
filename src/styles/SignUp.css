@@ -1,0 +1,12 @@
+#cardSignUp {
+    width: 400px;
+    height: 500px;
+    background-color: lightsalmon;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
