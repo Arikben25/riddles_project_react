@@ -7,7 +7,7 @@ export default function HomePage() {
     <div>
       <div id="buttonHome">
         <button onClick={() => navigate("/LoginPage")}>Log In</button>
-        <button onClick={() => navigate("/RegisterPage")}>Sign Up</button>
+        <button onClick={() => navigate("/SignUp")}>Sign Up</button>
       </div>
 
       <div id="titleHome">
