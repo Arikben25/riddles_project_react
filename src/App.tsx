@@ -8,7 +8,6 @@ import RegisterPage from "./pages/RegisterPage";
 export default function App() {
   return (
     <div>
-      App
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/GamePage" element={<GamePage />} />

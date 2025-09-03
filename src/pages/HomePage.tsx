@@ -1,16 +1,21 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router-dom";
+import "../styles/Home.css"
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div>
-      <h1> Riddles Game</h1>
-      <nav>
-        <Link to={"http://localhost:5173/GamePage"}>GamePage</Link>
-        <br></br>
-        <Link to={"http://localhost:5173/LoginPage"}>LoginPage</Link>
-        <br></br>
-        <Link to={"http://localhost:5173/RegisterPage"}>RegisterPage</Link>
-      </nav>
+      <div id="buttonHome">
+        <button onClick={() => navigate("/LoginPage")}>Log In</button>
+        <button onClick={() => navigate("/RegisterPage")}>Sign Up</button>
+      </div>
+
+      <div id="titleHome">
+        <h1> Riddles Game</h1>
+        <button id="StartGame" onClick={() => navigate("/GamePage")}>
+          Start Game
+        </button>
+      </div>
     </div>
   );
 }
