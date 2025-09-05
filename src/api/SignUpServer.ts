@@ -13,11 +13,14 @@ export async function createUsser(userName:string,password:string) {
         UserType: "normal user",
       }),
     });
+    const data = await res.json();
 
     if (!res.ok) {
-      throw new Error("you have a problem with respons");
+      throw new Error(data.msg || "you have a problem with respons");
     }
+    return data
   } catch (err) {
     console.error("you have a problem with conected", err);
+    throw err;
   }
 }
