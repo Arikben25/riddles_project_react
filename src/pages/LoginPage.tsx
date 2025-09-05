@@ -1,6 +1,8 @@
-
+import LogInComps from "../components/LogInComps"
 export default function LoginPage() {
   
 
-  return <div>LoginPage</div>;
+  return <div>
+    <LogInComps/>
+  </div>;
 }

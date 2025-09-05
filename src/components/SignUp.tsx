@@ -8,21 +8,31 @@ export default function SignUpComps() {
   const [message, setMessage] = useState("");
 
   async function SignUp() {
+    if (!userName || !password) {
+      setMessage("Please fill in all details");
+      return;
+    }
     try {
-     
-      if (!userName || !password) {
-        setMessage("Please fill in all details");
-        return
-      }
-      await createUsser(userName, password);
-      setMessage(`Welcome ${userName}, you have successfully connected.`);
-    } catch (err) {}
+      const res = await createUsser(userName, password);
+      console.log(res)
+      setMessage(res.msg || `Welcome ${res[0].name}, you have successfully connected.`);
+    } catch (err: any) {
+      setMessage(
+        err.message ||
+          "Sorry, there is a problem with the server, please try later."
+      );
+    }
   }
 
   return (
-    <div id="cardSignUp">
+    <div className="cardSignUp_LogIn">
       <h2>טופס הרשמה</h2>
-      <form onSubmit={(e)=>{e.preventDefault(); SignUp()}}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          SignUp();
+        }}
+      >
         <label htmlFor="userName">Enter your name</label>
         <br></br>
         <input
